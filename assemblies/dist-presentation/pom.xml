@@ -115,6 +115,7 @@
             <feature>eclipselink</feature>
             <!-- Opencast features -->
             <feature>opencast-presentation</feature>
+            <feature>opencast-security-cas</feature>
           </bootFeatures>
         </configuration>
       </plugin>
