@@ -29,7 +29,7 @@
                     <select chosen pre-select-from="video.workflows" class="workflow"
                         ng-disabled="!video.workflows || video.workflows.length === 0"
                         data-width="'175px'"
-                        data-disable-search-threshold="8"
+                        data-disable-search-threshold="0"
                         ng-model="video.workflow"
                         ng-options="workflow.id as workflow.name for workflow in video.workflows" />
 
@@ -43,6 +43,8 @@
             </div>
         </div>
         <div data-admin-ng-notifications=""></div>
+        <div data-admin-ng-notifications="" type="warning" show="submitButton" context="video-editor-event-access"></div>
+
         <div class="tab-menu">
             <nav class="view-controller">
                 <a ng-class="{active: tab === 'playback'}"
@@ -84,7 +86,6 @@
 
                 <div ng-if="area === 'metadata'">
                   <div class="area-body">
-                      <div data-admin-ng-notifications="" context="events-access"></div>
                       <div data-admin-ng-notification="" data-type="warning" show="metadata.locked" message="{{ metadata.locked }}"></div>
                       <div class="full-col">
                           <div class="obj tbl-details">
@@ -106,7 +107,6 @@
                 </div>
                 <div ng-if="area === 'comments'">
                   <div class="area-body">
-                      <div data-admin-ng-notifications="" context="events-access"></div>
                       <div class="full-col">
                           <div class="obj comments">
                               <header class="no-expand" translate="EVENTS.EVENTS.DETAILS.COMMENTS.CAPTION">
@@ -156,7 +156,7 @@
                                           <div class="reasons">
                                               <select chosen pre-select-from="components.eventCommentReasons"
                                                   data-width="'200px'"
-                                                  data-disable-search-threshold="8"
+                                                  data-disable-search-threshold="0"
                                                   ng-model="myComment.reason"
                                                   ng-options="value | translate for (id, value) in components.eventCommentReasons"
                                                   data-placeholder="{{ 'EVENTS.EVENTS.DETAILS.COMMENTS.SELECTPLACEHOLDER' | translate }}"
@@ -232,7 +232,7 @@
                         <select chosen pre-select-from="video.workflows" class="workflow"
                             ng-disabled="!video.workflows || video.workflows.length === 0"
                             data-width="'175px'"
-                            data-disable-search-threshold="8"
+                            data-disable-search-threshold="0"
                             ng-model="video.workflow"
                             ng-options="workflow.id as workflow.name for workflow in video.workflows" />
 
